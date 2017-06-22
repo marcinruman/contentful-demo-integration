@@ -4,7 +4,7 @@ import Post from './Post';
 
 
 
-const PRODUCT_CONTENT_TYPE_ID = '2wKn6yEnZewu2SCCkus4as';
+const POST_CONTENT_TYPE_ID = '2wKn6yEnZewu2SCCkus4as';
 
 const client = createClient({
     // This is the space ID.
@@ -29,7 +29,7 @@ export class Home extends Component {
     componentDidMount() {
 
         client.getEntries({
-            content_type: PRODUCT_CONTENT_TYPE_ID
+            content_type: POST_CONTENT_TYPE_ID
         })
         .then(entries => {
 
