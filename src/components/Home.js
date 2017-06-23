@@ -2,8 +2,6 @@ import { h , Component } from 'preact';
 import { createClient } from 'contentful';
 import Post from './Post';
 
-
-
 const POST_CONTENT_TYPE_ID = '2wKn6yEnZewu2SCCkus4as';
 
 const client = createClient({
@@ -45,14 +43,14 @@ export class Home extends Component {
 
     render({}, {loading, posts}) {
         return (
-            <div class="app">
+            <section>
                 {loading
                  ? <p>Fetching...</p>
                  : posts.map(post => {
                      return <Post title={post.fields.title} body={post.fields.body} date={post.fields.date} />
                  })
                 }
-            </div>
+            </section>
         )
     };
 }
